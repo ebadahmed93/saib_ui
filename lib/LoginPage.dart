@@ -89,8 +89,22 @@ class _MyLoginPageState extends State<LoginPage> {
             // horizontal).
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              const Image(
-                image: AssetImage("assets/images/line.png"),
+              Stack(
+                children: [
+                  const Image(
+                    image: AssetImage("assets/images/line.png"),
+                  ),
+                  Positioned.fill(
+                      child: Align(
+                          alignment: Alignment.topCenter,
+                          child: Padding(
+                              padding: const EdgeInsets.only(right: 90),
+                              child: const Image(
+                                width: 65,
+                                height: 65,
+                                image: AssetImage("assets/images/ic_plane.png"),
+                              )))),
+                ],
               ),
               Container(
                 padding: const EdgeInsets.fromLTRB(60, 0, 60, 0),

@@ -19,11 +19,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
-
-
-
-
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -79,11 +74,22 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Positioned.fill(
                         child: Align(
+
+                            alignment: Alignment.topCenter,
+                            child: Padding(
+                                padding: const EdgeInsets.only(right: 90),
+                                child: const Image(
+                                  width: 65,
+                                  height: 65,
+                                  image:
+                                      AssetImage("assets/images/ic_plane.png"),
+                                )))),
+                    Positioned.fill(
+                        child: Align(
                             alignment: Alignment.centerRight,
                             child: Padding(
                                 padding: const EdgeInsets.only(right: 20),
                                 child: ElevatedButton(
-                                  
                                     style: ElevatedButton.styleFrom(
                                       shape: const CircleBorder(),
                                       padding: EdgeInsets.zero,
@@ -96,73 +102,66 @@ class _HomePageState extends State<HomePage> {
                                             color: Colors.black)))))),
                   ],
                 ),
-                Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
-                      Container(
-                          padding: const EdgeInsets.fromLTRB(60, 0, 60, 0),
-                          child: Column(children: const [
-                            Padding(
-                                padding: EdgeInsets.fromLTRB(5, 30, 5, 0),
-                                child: Image(
-                                  image: AssetImage(
-                                      "assets/images/logo_saib.png"),
-                                )),
-                            Padding(
-                                padding:
-                                    EdgeInsets.symmetric(vertical: 30),
-                                child: Text("Welcome",
+                Column(mainAxisAlignment: MainAxisAlignment.start, children: <
+                    Widget>[
+                  Container(
+                      padding: const EdgeInsets.fromLTRB(60, 0, 60, 0),
+                      child: Column(children: const [
+                        Padding(
+                            padding: EdgeInsets.fromLTRB(5, 30, 5, 0),
+                            child: Image(
+                              image: AssetImage("assets/images/logo_saib.png"),
+                            )),
+                        Padding(
+                            padding: EdgeInsets.symmetric(vertical: 30),
+                            child: Text("Welcome",
+                                style: TextStyle(
+                                    fontSize: 13, color: Colors.white))),
+                      ])),
+                  Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 20, horizontal: 0),
+                      child: Row(children: [
+                        buildImageIconWithText("1"),
+                        buildImageIconWithText("2"),
+                        buildImageIconWithText("3"),
+                      ])),
+                  Container(
+                      padding: const EdgeInsets.fromLTRB(60, 0, 60, 0),
+                      child: Column(children: [
+                        Padding(
+                            padding: const EdgeInsets.fromLTRB(5.0, 25, 5, 5),
+                            child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  minimumSize: const Size.fromHeight(40),
+                                  primary: Colors.yellow,
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(50)),
+                                  padding:
+                                      const EdgeInsets.fromLTRB(0, 20, 0, 20),
+                                ),
+                                onPressed: () => moveToNextScreen(),
+                                child: const Text("Login",
                                     style: TextStyle(
-                                        fontSize: 13, color: Colors.white))),
-                          ])),
-                      Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 20, horizontal: 0),
-                          child: Row(children: [
-                            buildImageIconWithText("1"),
-                            buildImageIconWithText("2"),
-                            buildImageIconWithText("3"),
-                          ])),
-                      Container(
-                          padding: const EdgeInsets.fromLTRB(60, 0, 60, 0),
-                          child: Column(children: [
-                            Padding(
-                                padding: const EdgeInsets.fromLTRB(5.0, 25, 5, 5),
-                                child: ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                      minimumSize: const Size.fromHeight(40),
-                                      primary: Colors.yellow,
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(50)),
-                                      padding: const EdgeInsets.fromLTRB(
-                                          0, 20, 0, 20),
-                                    ),
-                                    onPressed: () => moveToNextScreen(),
-                                    child: const Text("Login",
-                                        style: TextStyle(
-                                            fontSize: 16,
-                                            color: Colors.black)))),
-                            Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 10.0, horizontal: 5),
-                                child: ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                      minimumSize: const Size.fromHeight(40),
-                                      primary: Colors.yellow,
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(50)),
-                                      padding: const EdgeInsets.fromLTRB(
-                                          0, 20, 0, 20),
-                                    ),
-                                    onPressed: () => moveToNextScreen(),
-                                    child: const Text("Register",
-                                        style: TextStyle(
-                                            fontSize: 16,
-                                            color: Colors.black)))),
-                          ]))
-                    ]),
+                                        fontSize: 16, color: Colors.black)))),
+                        Padding(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 10.0, horizontal: 5),
+                            child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  minimumSize: const Size.fromHeight(40),
+                                  primary: Colors.yellow,
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(50)),
+                                  padding:
+                                      const EdgeInsets.fromLTRB(0, 20, 0, 20),
+                                ),
+                                onPressed: () => moveToNextScreen(),
+                                child: const Text("Register",
+                                    style: TextStyle(
+                                        fontSize: 16, color: Colors.black)))),
+                      ]))
+                ]),
               ]),
         ),
       ),
